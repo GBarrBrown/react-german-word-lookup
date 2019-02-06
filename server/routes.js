@@ -8,10 +8,16 @@ router.use(express.json())
 
 //set routes in here
 
-router.get('/:id' ,(req, res) => {
-    console.log(req.params.id)
-    const id = JSON.stringify(req.params.id)
-    res.json(id)
+router.get('/:search' ,(req, res) => {
+    console.log(req.params.search)
+    // const search = JSON.stringify(req.params.search)
+    const search = req.params.search
+    console.log(search)
+    db.searchWord(search)
+    .then(results => {
+       res.json(results) 
+    })
+    
 })
 
 module.exports = router
