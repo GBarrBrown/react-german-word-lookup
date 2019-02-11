@@ -6,5 +6,7 @@ module.exports = {
 }
 
 function searchWord(searchStr, db = connection) {
-    return db('german_words').where('word', 'like', ''+searchStr+'%').select()
+    return db('german_words')
+    .where('word', 'like', ''+searchStr+'%')
+    .select()
 }

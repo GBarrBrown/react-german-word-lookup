@@ -1,18 +1,26 @@
 import React from 'react'
+import {searchWord} from '../api/api-routes'
 
 export default class Search extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            searchStr : ''
+            searchStr : '',
+            searchResults : []
         }
         this.onSubmit = this.onSubmit.bind(this)
         this.update = this.update.bind(this)
+
     }
 
     onSubmit(e) {
         e.preventDefault() //dont do default
         const search = this.state.searchStr
+        searchWord(search)
+        .then(res => {
+            this.setState({searchResult : res
+            })
+        })
     }
 
     update(e) {     
