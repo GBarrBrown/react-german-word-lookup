@@ -38,7 +38,7 @@ export default class Search extends React.Component {
             <React.Fragment>
             <div className="search-container">
                 <form onSubmit={this.onSubmit} className="search-form">
-                    <input onChange={this.update} type="text" name="searchStr" className="search-input" placeholder="Search.." required/>
+                    <input onChange={this.update} type="text" name="searchStr" className="search-input" placeholder="Search.." autoComplete="off" required/>
                 </form>
             </div>
             <Results searchResults={this.state.searchResults}/>
