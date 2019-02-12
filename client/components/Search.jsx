@@ -1,5 +1,6 @@
 import React from 'react'
 import {searchWord} from '../api/api-routes'
+import Results from './Results'
 
 export default class Search extends React.Component {
     constructor(props){
@@ -18,7 +19,7 @@ export default class Search extends React.Component {
         const search = this.state.searchStr
         searchWord(search)
         .then(res => {
-            this.setState({searchResult : res
+            this.setState({searchResults : res
             })
         })
     }
@@ -34,11 +35,14 @@ export default class Search extends React.Component {
 
     render() {
         return(
+            <React.Fragment>
             <div className="search-container">
                 <form onSubmit={this.onSubmit} className="search-form">
                     <input onChange={this.update} type="text" name="searchStr" className="search-input" placeholder="Search.." required/>
                 </form>
             </div>
+            <Results searchResults={this.state.searchResults}/>
+            </React.Fragment>
         )
     }
 }
