@@ -5,7 +5,10 @@ const Results = (props) => {
     return(
         <div>
             <ul>
-                {searchResultsArr.map((result) => <li>{result.word}</li>)}
+    {searchResultsArr.map((result, key) => {
+        return<li key={key}>{result.word}</li>
+        }
+        )}
             </ul>
         </div>
     )
