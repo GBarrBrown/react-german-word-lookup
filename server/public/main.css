@@ -66,3 +66,13 @@ h1 {
     outline: none;
     border-radius: 5px;
 }
+
+.outer-results-container {
+    text-align: center;
+}
+
+.results-container {
+    display: inline-block;
+    width: 70%;
+    text-align: left;
+}
