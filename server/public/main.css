@@ -40,3 +40,29 @@ h1 {
     color: #8FD8D2;
 }
 
+/* Search Box CSS */
+
+.search-container {
+    margin-top: 50px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-form {
+    width: 40vw;
+}
+
+.search-input {
+    width: 100%; /* stretch to full width of container div */
+    /* display:inline-block; */
+    padding: 20px;
+    /* border-radius: 30px; */
+    font-size: 1.5em;
+}
+
+.search-input:focus {
+    outline: none;
+    border-radius: 5px;
+}
