@@ -3,9 +3,40 @@ html, body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
     Helvetica, Arial, "Lucida Grande", sans-serif;
     margin: 0px;
+    background-color: #F9F9F9;
 }
 
+/* 
+
+Color Pallette
+
+#F9F9F9 - purple'y off-white .. Page bg
+
+#FEDCD2 - peach .. Nav bg
+
+#8FD8D2
+
+#F0EBF4 - more purpl'y off-white .. nav title (pos swp for secondary)
+
+
+
+
+
+*/
 
 .Nav {
-    background-color: #E64398;
+    background-color: #FEDCD2;
+    overflow: auto;
+    padding: 10px;
 }
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #F0EBF4
+}
+
+.secondary-title {
+    color: #8FD8D2;
+}
+
