@@ -24,6 +24,9 @@ Color Pallette
 
 */
 
+
+/* Header/Nav Bar CSS */
+
 .Nav {
     background-color: #FEDCD2;
     overflow: auto;
@@ -39,6 +42,7 @@ h1 {
 .secondary-title {
     color: #8FD8D2;
 }
+
 
 /* Search Box CSS */
 
@@ -66,6 +70,9 @@ h1 {
     outline: none;
     border-radius: 5px;
 }
+
+
+/* Results Containers CSS */
 
 .outer-results-container {
     text-align: center;
