@@ -10,28 +10,21 @@ router.use(express.json())
 
 router.get('/:search' ,(req, res) => {
     const search = req.params.search
-    return db.searchWord(search)
-    .then(results => {
-        console.log(results)
-        var finalResults = results
-        results.length 
-        ? results.map((gWord, i) => {
-            return db.getTranslations(gWord.id)
-            .then((res) => {
-                console.log(res)
-                res.map((translations) => {
-                    return db.getEnglishById(translations.english_id)
-                    .then((englishTranslation) => {
-                        console.log(englishTranslation)
-                        typeof finalResults[i].translations == 'object'
-                        ? finalResults[i].translations.push(englishTranslation.word)
-                        : finalResults[i].translations = [englishTranslation.word]
-                    })
-                })
+    let output;
+
+    db.searchQueryGerman(search)
+    .then((searchResults) => {
+        output = searchResults
+        return Promise.all(searchResults.map((germanWord, i) => {
+            return db.getTranslations(germanWord.id)
+            .then((translationResults) => {
+                output[i].translations = translationResults
+                return translationResults
             })
-        }) : console.log('ahh, something went super wrong :)')
-        console.log('final results', finalResults)
-       return res.json(results) 
+        }))
+    })
+    .then(() => {
+        console.log('-- OUTPUT -- \n',output)
     })
 })
 
