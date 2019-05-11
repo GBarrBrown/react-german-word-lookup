@@ -25,6 +25,7 @@ router.get('/:search' ,(req, res) => {
     })
     .then(() => {
         console.log('-- OUTPUT -- \n',output)
+        res.json(output)
     })
 })
 
